@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Analyst Login — RiskShield AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="grid-background flex items-center justify-center" style="min-height: 100vh; padding: var(--space-6);">
+
+  <div class="card-glass" style="width: 100%; max-width: 440px; padding: var(--space-8);">
+    <div style="text-align: center; margin-bottom: var(--space-6);">
+      <a href="index.html" class="brand-logo justify-center" style="margin-bottom: var(--space-3);">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <span class="brand-text">RiskShield <span>AI</span></span>
+      </a>
+      <h1 class="text-title-2">Risk Operations Portal</h1>
+      <p class="text-small" style="margin-top: 4px;">Sign in to access real-time fraud monitoring.</p>
+    </div>
+
+    <form id="loginForm" class="flex flex-col gap-4" onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+      <div>
+        <label class="text-small" style="display: block; margin-bottom: 6px; font-weight: 600;">Analyst Email</label>
+        <input type="email" value="analyst@riskshield.internal" required style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: #fff;">
+      </div>
+
+      <div>
+        <label class="text-small" style="display: block; margin-bottom: 6px; font-weight: 600;">Security Key / Password</label>
+        <input type="password" value="Password@123" required style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: #fff;">
+      </div>
+
+      <div class="flex justify-between items-center text-small">
+        <label class="flex items-center gap-2" style="cursor: pointer;">
+          <input type="checkbox" checked style="accent-color: var(--accent-orange);">
+          <span>Remember session</span>
+        </label>
+        <a href="#" style="color: var(--accent-orange);">Forgot key?</a>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-2);">
+        Authenticate &amp; Launch
+      </button>
+
+      <div style="text-align: center; margin-top: var(--space-2);">
+        <span class="text-small">Need analyst credentials? <a href="signup.html" style="color: var(--accent-orange); font-weight: 600;">Request Provisioning</a></span>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/api.js"></script>
+</body>
+</html>

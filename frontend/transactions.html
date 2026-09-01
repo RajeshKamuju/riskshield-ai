@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Transactions — RiskShield AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="grid-background">
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span class="brand-text">RiskShield <span>AI</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="transactions.html" class="nav-link active" style="color: var(--accent-orange);">Transactions</a>
+        <a href="fraud-alerts.html" class="nav-link">Alerts</a>
+        <a href="investigation-cases.html" class="nav-link">Cases</a>
+        <a href="risk-rules.html" class="nav-link">Rules</a>
+        <a href="risk-simulator.html" class="nav-link">Simulator</a>
+        <a href="audit-logs.html" class="nav-link">Audit</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="dashboard.html" class="btn btn-secondary btn-sm">Dashboard</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+    <div class="flex justify-between items-center" style="margin-bottom: var(--space-6);">
+      <div>
+        <h1 class="text-title-1">Real-Time Transactions</h1>
+        <p class="text-subtitle">Streaming payment authorisations and risk evaluations.</p>
+      </div>
+      <div class="flex gap-3">
+        <input type="text" placeholder="Filter by ID, VPA, Card BIN..." style="background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.5rem 1rem; color: #fff;">
+      </div>
+    </div>
+
+    <div class="card-glass">
+      <table style="width: 100%; text-align: left; font-size: 0.875rem;">
+        <thead>
+          <tr style="border-bottom: 1px solid var(--border-medium); color: var(--text-muted);">
+            <th style="padding: 12px 8px;">TXN ID</th>
+            <th style="padding: 12px 8px;">CUSTOMER</th>
+            <th style="padding: 12px 8px;">METHOD</th>
+            <th style="padding: 12px 8px;">AMOUNT</th>
+            <th style="padding: 12px 8px;">RISK SCORE</th>
+            <th style="padding: 12px 8px;">DECISION</th>
+            <th style="padding: 12px 8px;">TIMESTAMP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px;" class="text-mono">TXN-92841</td>
+            <td style="padding: 12px 8px;">Arjun Rao</td>
+            <td style="padding: 12px 8px;">UPI</td>
+            <td style="padding: 12px 8px;" class="highlight-orange">₹75,000</td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-critical">92 (CRITICAL)</span></td>
+            <td style="padding: 12px 8px;"><span class="text-mono" style="color: var(--risk-critical); font-weight: 700;">BLOCK</span></td>
+            <td style="padding: 12px 8px;" class="text-small">Just now</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px;" class="text-mono">TXN-92840</td>
+            <td style="padding: 12px 8px;">Priya Sharma</td>
+            <td style="padding: 12px 8px;">CARD</td>
+            <td style="padding: 12px 8px;">₹1,450</td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-low">14 (LOW)</span></td>
+            <td style="padding: 12px 8px;"><span class="text-mono" style="color: var(--risk-low); font-weight: 700;">APPROVE</span></td>
+            <td style="padding: 12px 8px;" class="text-small">2 mins ago</td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px;" class="text-mono">TXN-92839</td>
+            <td style="padding: 12px 8px;">Vikram Mehta</td>
+            <td style="padding: 12px 8px;">NETBANKING</td>
+            <td style="padding: 12px 8px;" class="highlight-orange">₹42,000</td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-high">74 (HIGH)</span></td>
+            <td style="padding: 12px 8px;"><span class="text-mono" style="color: var(--risk-high); font-weight: 700;">REVIEW</span></td>
+            <td style="padding: 12px 8px;" class="text-small">5 mins ago</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

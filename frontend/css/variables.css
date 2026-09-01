@@ -1,0 +1,98 @@
+/* ===================================================================
+   RiskShield AI - CSS Design System & Custom Properties
+   Theme: Cinematic Dark, Futuristic Fintech, Security-Focused
+   =================================================================== */
+
+:root {
+  /* Surface & Background Colors */
+  --bg-primary: #07090E;
+  --bg-secondary: #0D111A;
+  --bg-tertiary: #131926;
+  --bg-surface: #182030;
+  --bg-surface-elevated: #1F293D;
+  --bg-card: rgba(19, 25, 38, 0.75);
+  --bg-glass: rgba(13, 17, 26, 0.65);
+
+  /* Primary Brand & Accent Colors */
+  --accent-orange: #FF5E00;
+  --accent-orange-glow: rgba(255, 94, 0, 0.35);
+  --accent-red-orange: #FF3B2F;
+  --accent-red-glow: rgba(255, 59, 47, 0.35);
+  --accent-amber: #FFB800;
+  --accent-amber-glow: rgba(255, 184, 0, 0.25);
+  --accent-violet: #6E3AFF;
+  --accent-violet-glow: rgba(110, 58, 255, 0.25);
+  --accent-blue: #0080FF;
+  --accent-blue-glow: rgba(0, 128, 255, 0.25);
+
+  /* Risk State Colors */
+  --risk-low: #00E699;
+  --risk-low-bg: rgba(0, 230, 153, 0.12);
+  --risk-low-border: rgba(0, 230, 153, 0.35);
+
+  --risk-medium: #FFB800;
+  --risk-medium-bg: rgba(255, 184, 0, 0.12);
+  --risk-medium-border: rgba(255, 184, 0, 0.35);
+
+  --risk-high: #FF6B00;
+  --risk-high-bg: rgba(255, 107, 0, 0.14);
+  --risk-high-border: rgba(255, 107, 0, 0.4);
+
+  --risk-critical: #FF2E4D;
+  --risk-critical-bg: rgba(255, 46, 77, 0.16);
+  --risk-critical-border: rgba(255, 46, 77, 0.45);
+
+  /* Text & Content Colors */
+  --text-primary: #FFFFFF;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-dim: #475569;
+  --text-accent: #FF7729;
+
+  /* Border Colors */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-medium: rgba(255, 255, 255, 0.14);
+  --border-strong: rgba(255, 255, 255, 0.22);
+  --border-accent: rgba(255, 94, 0, 0.4);
+  --border-glow: rgba(255, 94, 0, 0.6);
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, Monaco, monospace;
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-full: 9999px;
+
+  /* Box Shadows & Glows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --shadow-xl: 0 20px 48px rgba(0, 0, 0, 0.75);
+  --glow-orange: 0 0 35px var(--accent-orange-glow);
+  --glow-red: 0 0 35px var(--accent-red-glow);
+  --glow-violet: 0 0 35px var(--accent-violet-glow);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+}

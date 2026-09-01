@@ -1,0 +1,7 @@
+{
+  "name": "RiskShield AI",
+  "description": "Intelligent Payment Risk & Fraud Decisioning Platform featuring real-time explainable scoring, multi-signal fraud detection, rule engine, and risk ops dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

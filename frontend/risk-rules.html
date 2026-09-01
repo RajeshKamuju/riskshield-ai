@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Risk Rules — RiskShield AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="grid-background">
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <span class="brand-text">RiskShield <span>AI</span></span>
+      </a>
+      <nav class="nav-links">
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+        <a href="transactions.html" class="nav-link">Transactions</a>
+        <a href="fraud-alerts.html" class="nav-link">Alerts</a>
+        <a href="investigation-cases.html" class="nav-link">Cases</a>
+        <a href="risk-rules.html" class="nav-link active" style="color: var(--accent-orange);">Rules</a>
+        <a href="risk-simulator.html" class="nav-link">Simulator</a>
+        <a href="audit-logs.html" class="nav-link">Audit</a>
+      </nav>
+      <div class="nav-actions"><a href="dashboard.html" class="btn btn-secondary btn-sm">Dashboard</a></div>
+    </div>
+  </header>
+
+  <div class="container" style="padding-top: var(--space-8); padding-bottom: var(--space-16);">
+    <div class="flex justify-between items-center" style="margin-bottom: var(--space-6);">
+      <div>
+        <h1 class="text-title-1">Risk Policy &amp; Rules Engine</h1>
+        <p class="text-subtitle">Configure heuristic thresholds, velocity windows, and score weights.</p>
+      </div>
+      <button class="btn btn-primary btn-sm">+ Create New Rule</button>
+    </div>
+
+    <div class="card-glass">
+      <table style="width: 100%; text-align: left; font-size: 0.875rem;">
+        <thead>
+          <tr style="border-bottom: 1px solid var(--border-medium); color: var(--text-muted);">
+            <th style="padding: 12px 8px;">RULE CODE</th>
+            <th style="padding: 12px 8px;">RULE NAME</th>
+            <th style="padding: 12px 8px;">CONDITION</th>
+            <th style="padding: 12px 8px;">WEIGHT</th>
+            <th style="padding: 12px 8px;">ACTION</th>
+            <th style="padding: 12px 8px;">STATUS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px;" class="text-mono">RULE-VEL-01</td>
+            <td style="padding: 12px 8px;">Rapid Card Velocity Burst</td>
+            <td style="padding: 12px 8px;"><code>count(txns, 5min) &gt; 5</code></td>
+            <td style="padding: 12px 8px;" class="highlight-orange">+30 pts</td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-critical">BLOCK</span></td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-low">ENABLED</span></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px;" class="text-mono">RULE-AMT-02</td>
+            <td style="padding: 12px 8px;">Extreme Baseline Outlier</td>
+            <td style="padding: 12px 8px;"><code>amount &gt; (baseline_mean * 5)</code></td>
+            <td style="padding: 12px 8px;" class="highlight-orange">+25 pts</td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-high">REVIEW</span></td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-low">ENABLED</span></td>
+          </tr>
+          <tr style="border-bottom: 1px solid var(--border-subtle);">
+            <td style="padding: 12px 8px;" class="text-mono">RULE-NET-03</td>
+            <td style="padding: 12px 8px;">Tor Exit Node Interception</td>
+            <td style="padding: 12px 8px;"><code>ip.is_tor == true</code></td>
+            <td style="padding: 12px 8px;" class="highlight-orange">+25 pts</td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-critical">BLOCK</span></td>
+            <td style="padding: 12px 8px;"><span class="badge-risk badge-risk-low">ENABLED</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>

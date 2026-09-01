@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risk Operations Dashboard — RiskShield AI</title>
+  <meta name="description" content="Real-time payment risk intelligence and fraud decisioning dashboard.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/3d-effects.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="grid-background" id="dashboardRoot">
+
+  <!-- Atmospheric Noise / Grain Physical Texture -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <div class="dashboard-layout">
+    
+    <!-- Left Sidebar -->
+    <aside class="dashboard-sidebar">
+      <a href="index.html" class="sidebar-brand">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <span class="brand-text">RiskShield <span>AI</span></span>
+      </a>
+
+      <!-- Navigation Section: OVERVIEW -->
+      <div class="sidebar-nav-group">
+        <div class="sidebar-group-title">OVERVIEW</div>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="dashboard.html" class="sidebar-nav-item active">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Section: MONITORING -->
+      <div class="sidebar-nav-group">
+        <div class="sidebar-group-title">MONITORING</div>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="transactions.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+              <span>Transactions</span>
+              <span class="sidebar-badge sidebar-badge-amber">LIVE</span>
+            </a>
+          </li>
+          <li>
+            <a href="fraud-alerts.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+              </svg>
+              <span>Fraud Alerts</span>
+              <span class="sidebar-badge sidebar-badge-red">14</span>
+            </a>
+          </li>
+          <li>
+            <a href="investigation-cases.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span>Investigation Cases</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Section: INTELLIGENCE -->
+      <div class="sidebar-nav-group">
+        <div class="sidebar-group-title">INTELLIGENCE</div>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="javascript:void(0)" onclick="DashboardEngine.openTransactionModal('TXN-92841')" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>Risk Analysis</span>
+            </a>
+          </li>
+          <li>
+            <a href="risk-simulator.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="10 8 16 12 10 16 10 8"></polygon>
+              </svg>
+              <span>Risk Simulator</span>
+            </a>
+          </li>
+          <li>
+            <a href="transactions.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Customers</span>
+            </a>
+          </li>
+          <li>
+            <a href="transactions.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Merchants</span>
+            </a>
+          </li>
+          <li>
+            <a href="risk-rules.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <span>Risk Rules</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Navigation Section: SYSTEM -->
+      <div class="sidebar-nav-group">
+        <div class="sidebar-group-title">SYSTEM</div>
+        <ul class="sidebar-nav-list">
+          <li>
+            <a href="audit-logs.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="12" y1="18" x2="12" y2="12"></line>
+                <line x1="9" y1="15" x2="15" y2="15"></line>
+              </svg>
+              <span>Audit Logs</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html#decision-scale" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+              </svg>
+              <span>Reports</span>
+            </a>
+          </li>
+          <li>
+            <a href="index.html" class="sidebar-nav-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+              <span>Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="login.html" class="sidebar-nav-item" style="color: var(--risk-critical);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                <polyline points="16 17 21 12 16 7"></polyline>
+                <line x1="21" y1="12" x2="9" y2="12"></line>
+              </svg>
+              <span>Logout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="text-small text-mono" style="color: var(--text-muted);">
+          RiskShield AI v2.4<br>
+          <span style="color: #00E699;">● Connected to Gateway</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+      
+      <!-- Top Header -->
+      <header class="dashboard-header">
+        <div>
+          <div class="header-greeting-title">Good morning, Risk Analyst</div>
+          <div class="header-greeting-sub">Live fraud ops telemetry & active transaction evaluation</div>
+        </div>
+
+        <div class="header-search-wrap">
+          <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input type="text" class="header-search-input" placeholder="Search TXN ID, Customer, Card BIN, VPA, IP...">
+          <span class="header-search-shortcut">⌘K</span>
+        </div>
+
+        <div class="header-actions">
+          <a href="risk-simulator.html" class="btn btn-primary btn-sm">+ Evaluate Payment</a>
+          
+          <!-- Notifications Bell -->
+          <button class="header-icon-btn" onclick="alert('14 Fraud Alerts pending review.');" title="Notifications">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+            <span class="header-badge-dot"></span>
+          </button>
+
+          <!-- User Profile Pill -->
+          <div class="header-user-pill">
+            <div class="user-avatar">RA</div>
+            <div class="text-left">
+              <div style="font-size: 0.8125rem; font-weight: 700; color: #FFFFFF; line-height: 1.2;">Rajesh K.</div>
+              <div style="font-size: 0.6875rem; color: var(--text-muted);">Lead Analyst (Tier 3)</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Emergency Spike Alert Strip -->
+      <div class="spike-alert-banner">
+        <div class="spike-alert-text">
+          <svg class="spike-alert-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span><strong>Spike detected:</strong> +34% in reused device fingerprints in the last 3 hours — possible credential stuffing campaign.</span>
+        </div>
+        <a href="fraud-alerts.html" class="btn btn-secondary btn-sm" style="padding: 2px 10px; font-size: 0.75rem;">Investigate Campaign &rarr;</a>
+      </div>
+
+      <!-- Dashboard Body Container -->
+      <div class="dashboard-body">
+
+        <!-- 1. DASHBOARD HERO: RISK INTELLIGENCE CENTERPIECE (Items 10) -->
+        <div class="dashboard-hero-intel card-3d-tilt">
+          <canvas id="dashHeroCanvas" style="position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none;" aria-hidden="true"></canvas>
+
+          <div class="hero-intel-header">
+            <div class="flex items-center gap-2">
+              <span class="radar-pulse-dot"></span>
+              <span class="text-mono text-small" style="font-weight: 700; color: #FFFFFF; letter-spacing: 0.05em;">RISK INTELLIGENCE STREAM &bull; LIVE CONVERGENCE</span>
+            </div>
+            <div class="text-mono text-small" style="color: #00E699;">P99 Latency: 11.2ms &bull; 248 Txns/min</div>
+          </div>
+
+          <div class="hero-intel-grid">
+            <!-- Left Side: Inbound Signals -->
+            <div class="intel-column">
+              <div class="intel-signal-chip">
+                <span>CUSTOMERS</span>
+                <span style="color: #0080FF;">● Profile</span>
+              </div>
+              <div class="intel-signal-chip">
+                <span>DEVICES</span>
+                <span style="color: #00E699;">● Canvas ID</span>
+              </div>
+              <div class="intel-signal-chip">
+                <span>LOCATIONS</span>
+                <span style="color: #6E3AFF;">● Geo-Hop</span>
+              </div>
+              <div class="intel-signal-chip">
+                <span>PAYMENTS</span>
+                <span style="color: #FFB800;">● UPI/Card</span>
+              </div>
+              <div class="intel-signal-chip">
+                <span>BEHAVIOR</span>
+                <span style="color: #00C8FF;">● Keystroke</span>
+              </div>
+            </div>
+
+            <!-- Central Risk Engine Hub -->
+            <div class="intel-engine-center">
+              <div class="engine-gyro-rings">
+                <div class="gyro-ring-1"></div>
+                <div class="gyro-ring-2"></div>
+                <div class="gyro-ring-core">
+                  <span class="text-mono" style="font-size: 0.6875rem; color: var(--accent-orange); font-weight: 700;">RISK ENGINE</span>
+                  <span class="text-mono" style="font-size: 1.4rem; font-weight: 800; color: #FFFFFF;" id="liveEngineScore">31.4</span>
+                  <span class="text-small" style="color: #00E699; font-size: 0.625rem; font-weight: 700;">&lt;12ms EVAL</span>
+                </div>
+              </div>
+              <div class="text-mono text-small" style="color: var(--text-muted); margin-top: var(--space-2);">
+                RiskShield AI Deterministic Core
+              </div>
+            </div>
+
+            <!-- Right Side: Threat & Alert Outbound Signals -->
+            <div class="intel-column">
+              <div class="intel-threat-chip">
+                <span style="color: var(--risk-critical);">● ATO Hijack</span>
+                <span>FRAUD ALERTS</span>
+              </div>
+              <div class="intel-threat-chip">
+                <span style="color: var(--accent-orange);">● Tor Exit Node</span>
+                <span>SUSPICIOUS IPS</span>
+              </div>
+              <div class="intel-threat-chip">
+                <span style="color: #FF7729;">● 6 / 3m Burst</span>
+                <span>VELOCITY ALERTS</span>
+              </div>
+              <div class="intel-threat-chip">
+                <span style="color: var(--risk-critical);">● ₹75,000 Outlier</span>
+                <span>RISKY TRANSACTIONS</span>
+              </div>
+              <div class="intel-threat-chip">
+                <span style="color: var(--accent-orange);">● Bot Testing</span>
+                <span>THREAT SIGNALS</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. KPI SUMMARY CARDS (Items 12) -->
+        <div class="kpi-grid" id="kpiContainer">
+          <!-- Rendered dynamically by DashboardEngine.renderKpiCards() -->
+        </div>
+
+        <!-- 3. HIGHLIGHT TRANSACTION RISK CARD & LIVE ENGINE PANEL (Items 11 & 18) -->
+        <div class="charts-grid-2col">
+          
+          <!-- Highlight Hero Transaction: TXN-92841 -->
+          <div class="hero-txn-card card-3d-tilt">
+            <div class="flex justify-between items-center" style="margin-bottom: var(--space-3);">
+              <div class="flex items-center gap-2">
+                <span class="badge-risk badge-risk-critical">CRITICAL RISK (92/100)</span>
+                <span class="text-mono" style="font-weight: 800; color: #FFFFFF; font-size: 1.1rem;">TXN-92841</span>
+              </div>
+              <span class="text-mono text-small" style="color: var(--risk-critical); font-weight: 700;">DECISION: BLOCK</span>
+            </div>
+
+            <div class="grid" style="grid-template-columns: repeat(4, 1fr); gap: var(--space-3); margin-bottom: var(--space-4); background: rgba(0,0,0,0.25); padding: var(--space-3); border-radius: var(--radius-md);">
+              <div>
+                <div class="text-small" style="color: var(--text-muted);">Amount</div>
+                <div class="text-mono" style="font-weight: 800; color: var(--accent-orange); font-size: 1.1rem;">₹75,000</div>
+              </div>
+              <div>
+                <div class="text-small" style="color: var(--text-muted);">Customer</div>
+                <div style="font-weight: 700; color: #FFFFFF;">Arjun Rao</div>
+              </div>
+              <div>
+                <div class="text-small" style="color: var(--text-muted);">Payment Method</div>
+                <div class="text-mono" style="color: #FFFFFF;">UPI (VPA)</div>
+              </div>
+              <div>
+                <div class="text-small" style="color: var(--text-muted);">Merchant</div>
+                <div style="color: #FFFFFF;">Acme Electronics</div>
+              </div>
+            </div>
+
+            <div class="text-small" style="color: var(--text-muted); font-weight: 700; text-transform: uppercase; margin-bottom: var(--space-2);">
+              Explainable Factor Attributions:
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 6px; margin-bottom: var(--space-4);">
+              <div class="factor-item" style="padding: 6px 10px; justify-content: space-between; font-size: 0.8125rem;">
+                <span>Amount Anomaly (8.4x baseline average)</span>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: var(--risk-critical);">+20 pts</span>
+              </div>
+              <div class="factor-item" style="padding: 6px 10px; justify-content: space-between; font-size: 0.8125rem;">
+                <span>Transaction Velocity Spike (6 txns / 3m)</span>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: var(--risk-critical);">+25 pts</span>
+              </div>
+              <div class="factor-item" style="padding: 6px 10px; justify-content: space-between; font-size: 0.8125rem;">
+                <span>New Hardware Fingerprint (Linux Canvas)</span>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: var(--risk-high);">+15 pts</span>
+              </div>
+              <div class="factor-item" style="padding: 6px 10px; justify-content: space-between; font-size: 0.8125rem;">
+                <span>Tor Exit Node Origin IP (185.220.101.99)</span>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: var(--risk-critical);">+20 pts</span>
+              </div>
+              <div class="factor-item" style="padding: 6px 10px; justify-content: space-between; font-size: 0.8125rem;">
+                <span>Impossible Geographic Transit Speed</span>
+                <span style="font-family: var(--font-mono); font-weight: 700; color: var(--risk-high);">+12 pts</span>
+              </div>
+            </div>
+
+            <div class="flex justify-between items-center">
+              <span class="text-small text-mono" style="color: var(--text-muted);">Evaluation Latency: 11.2ms</span>
+              <div class="flex gap-2">
+                <button class="btn btn-secondary btn-sm" onclick="DashboardEngine.openTransactionModal('TXN-92841')">Why was this flagged?</button>
+                <button class="btn btn-primary btn-sm" style="background: var(--risk-critical); border-color: var(--risk-critical);" onclick="alert('Transaction Block confirmed. Entity added to blacklist.');">Block & Blacklist</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Risk Engine Compact Panel (Item 18) -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div class="chart-card-title">LIVE RISK ENGINE</div>
+              <span class="badge-risk badge-risk-low">ACTIVE &bull; P99: 11.2ms</span>
+            </div>
+
+            <div class="grid" style="grid-template-columns: 1fr 1fr; gap: var(--space-4); align-items: center;">
+              <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                <div class="spatial-gauge-container" style="width: 140px; height: 140px;">
+                  <div class="spatial-orbital-ring" style="inset: -8px;"></div>
+                  <div class="spatial-orbital-ring-2" style="inset: -16px;"></div>
+                  <div style="width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(circle, rgba(255,94,0,0.2) 0%, rgba(13,17,26,0.9) 70%); border: 2px solid var(--accent-orange); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <span class="text-mono" style="font-size: 1.6rem; font-weight: 800; color: #FFFFFF;">31.4</span>
+                    <span class="text-small" style="color: var(--accent-amber); font-weight: 700;">MODERATE</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+                <div style="background: var(--bg-secondary); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div class="text-small" style="color: var(--text-muted);">Transactions / min</div>
+                  <div class="text-mono" style="font-size: 1.25rem; font-weight: 800; color: #FFFFFF;" id="liveTxnMin">248</div>
+                </div>
+                <div style="background: var(--bg-secondary); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div class="text-small" style="color: var(--text-muted);">High Risk / min</div>
+                  <div class="text-mono" style="font-size: 1.25rem; font-weight: 800; color: var(--risk-critical);" id="liveHighMin">8</div>
+                </div>
+                <div style="background: var(--bg-secondary); padding: var(--space-3); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+                  <div class="text-small" style="color: var(--text-muted);">Current Threat Level</div>
+                  <div class="text-mono" style="font-size: 0.9375rem; font-weight: 800; color: var(--risk-medium);">MODERATE (Level 2)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. TRANSACTION RISK TREND (LINE CHART) & TOP RISK FACTORS (BAR CHART) (Items 14 & 15) -->
+        <div class="charts-grid-2col">
+          
+          <!-- Line Chart: Transaction Risk Trend -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title">Transaction Risk Trend</div>
+                <div class="text-small" style="color: var(--text-muted);">Approved vs Monitored vs Review vs Blocked volume</div>
+              </div>
+              <div class="chart-timeframe-toggles">
+                <button class="timeframe-btn active" data-timeframe="7d">7 Days</button>
+                <button class="timeframe-btn" data-timeframe="30d">30 Days</button>
+                <button class="timeframe-btn" data-timeframe="90d">90 Days</button>
+              </div>
+            </div>
+
+            <div style="position: relative; width: 100%; height: 230px;">
+              <canvas id="trendLineCanvas" style="width: 100%; height: 100%;"></canvas>
+            </div>
+
+            <div class="flex justify-center gap-6" style="margin-top: var(--space-3); font-size: 0.75rem; font-family: var(--font-mono);">
+              <span class="flex items-center gap-2"><span style="width: 10px; height: 3px; background: #00E699; border-radius: 2px;"></span> Approved</span>
+              <span class="flex items-center gap-2"><span style="width: 10px; height: 3px; background: #FFB800; border-radius: 2px;"></span> Monitored</span>
+              <span class="flex items-center gap-2"><span style="width: 10px; height: 3px; background: #FF6B00; border-radius: 2px;"></span> Review</span>
+              <span class="flex items-center gap-2"><span style="width: 10px; height: 3px; background: #FF2E4D; border-radius: 2px;"></span> Blocked</span>
+            </div>
+          </div>
+
+          <!-- Horizontal Bar Chart: Top Risk Factors -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title">Top Risk Factors</div>
+                <div class="text-small" style="color: var(--text-muted);">Trigger frequency across all payment flows</div>
+              </div>
+              <span class="text-mono text-small" style="color: var(--accent-orange);">Last 30 Days</span>
+            </div>
+
+            <div class="factor-bar-list" id="riskFactorsBarList">
+              <!-- Rendered dynamically by DashboardEngine.renderTopRiskFactors() -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. RISK DECISION ACTIVITY & FRAUD HEATMAP (Items 16 & 17) -->
+        <div class="charts-grid-2col">
+          
+          <!-- Stacked Bar Chart: Risk Activity -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title">Risk Activity & Decision Breakdown</div>
+                <div class="text-small" style="color: var(--text-muted);">Proportionate decision distribution by day</div>
+              </div>
+              <span class="text-mono text-small" style="color: var(--text-muted);">Stacked Volume %</span>
+            </div>
+
+            <div id="stackedBarContainer">
+              <!-- Rendered dynamically by DashboardEngine.renderStackedDecisions() -->
+            </div>
+          </div>
+
+          <!-- Heatmap Chart: Fraud Activity by Days & Hours -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title">Fraud Activity Heatmap</div>
+                <div class="text-small" style="color: var(--text-muted);">Suspicious attempt concentration (Days vs Hours)</div>
+              </div>
+              <span class="text-mono text-small" style="color: var(--risk-critical);">Peak: 12 AM - 3 AM</span>
+            </div>
+
+            <div class="heatmap-container" id="fraudHeatmapGrid">
+              <!-- Rendered dynamically by DashboardEngine.renderFraudHeatmap() -->
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. HIGH-RISK TRANSACTIONS TABLE & FRAUD NETWORK (Items 19 & 20) -->
+        <div class="charts-grid-2col" style="grid-template-columns: 1.8fr 1fr;">
+          
+          <!-- High-Risk Transactions Table -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title">High-Risk Transactions Queue</div>
+                <div class="text-small" style="color: var(--text-muted);">Real-time stream of flagged and blocked payment events</div>
+              </div>
+              <div class="chart-timeframe-toggles">
+                <button class="timeframe-btn txn-filter-tab active" data-filter="ALL">All</button>
+                <button class="timeframe-btn txn-filter-tab" data-filter="CRITICAL">Critical</button>
+                <button class="timeframe-btn txn-filter-tab" data-filter="HIGH">High</button>
+                <button class="timeframe-btn txn-filter-tab" data-filter="LOW">Clean</button>
+              </div>
+            </div>
+
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>TXN ID</th>
+                    <th>Customer</th>
+                    <th>Merchant</th>
+                    <th>Amount</th>
+                    <th>Risk Score</th>
+                    <th>Decision</th>
+                    <th>Time</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="transactionsTableBody">
+                  <!-- Rendered dynamically by DashboardEngine.renderTransactionsTable() -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Interactive Fraud Network Graph -->
+          <div class="chart-card">
+            <div class="chart-card-header">
+              <div>
+                <div class="chart-card-title">Entity Relationship Graph</div>
+                <div class="text-small" style="color: var(--text-muted);">Customer &bull; Device &bull; IP &bull; Merchant Linkages</div>
+              </div>
+              <span class="badge-risk badge-risk-high">CLUSTER</span>
+            </div>
+
+            <div style="position: relative; width: 100%; height: 260px; background: rgba(0,0,0,0.3); border-radius: var(--radius-md); overflow: hidden;">
+              <canvas id="dashFraudNetworkCanvas" style="width: 100%; height: 100%; cursor: pointer;"></canvas>
+            </div>
+            
+            <div class="text-small" style="color: var(--text-muted); margin-top: var(--space-2); text-align: center;">
+              Hover over any node to highlight linked entities & threat score.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- Explainable AI Transaction Investigation Modal (Items 21, 22, 23) -->
+  <div class="modal-backdrop" id="txnDetailModal">
+    <div class="modal-window" id="modalTxnContent">
+      <!-- Injected dynamically by DashboardEngine.openTransactionModal() -->
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/mock-data.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/3d/3d-utils.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

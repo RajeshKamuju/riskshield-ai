@@ -1,0 +1,550 @@
+/* ===================================================================
+   RiskShield AI — 3D Spatial Effects & Depth System
+   Theme: Cinematic Dark, Advanced Fraud Intelligence, High-End Spatial Depth
+   Constraints: Zero color/layout changes, strict token adherence
+   =================================================================== */
+
+/* --- 3D Scene Containers --- */
+.scene-3d {
+  perspective: 1400px;
+  perspective-origin: 50% 50%;
+  transform-style: preserve-3d;
+}
+
+.scene-3d-hero {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+/* --- Multi-Layer Depth Layers --- */
+.layer-depth-bg {
+  transform: translateZ(-120px) scale(1.08);
+  pointer-events: none;
+  transition: transform var(--transition-smooth);
+}
+
+.layer-depth-ambient {
+  transform: translateZ(-60px) scale(1.04);
+  pointer-events: none;
+  transition: transform var(--transition-smooth);
+}
+
+.layer-depth-core {
+  transform: translateZ(0px);
+  transform-style: preserve-3d;
+  transition: transform var(--transition-smooth);
+}
+
+.layer-depth-nodes {
+  transform: translateZ(40px);
+  transform-style: preserve-3d;
+  transition: transform var(--transition-smooth);
+}
+
+.layer-depth-ui {
+  transform: translateZ(80px);
+  transform-style: preserve-3d;
+  transition: transform var(--transition-smooth);
+}
+
+/* --- 3D Hero Risk Intelligence Core Canvas --- */
+.hero-3d-core-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.hero-3d-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.hero-3d-overlay-card {
+  position: relative;
+  z-index: 2;
+  transform-style: preserve-3d;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(13, 17, 26, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: 
+    0 24px 60px rgba(0, 0, 0, 0.7),
+    0 0 40px rgba(255, 94, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+/* --- 3D Card Tilt & Specular Reflection --- */
+.card-3d-tilt {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.18s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+  will-change: transform;
+}
+
+.card-3d-tilt::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.03) 35%,
+    transparent 70%
+  );
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 5;
+}
+
+.card-3d-tilt:hover::after {
+  opacity: 1;
+}
+
+.card-3d-tilt:hover {
+  box-shadow: 
+    0 20px 48px rgba(0, 0, 0, 0.7),
+    0 0 25px rgba(255, 94, 0, 0.12);
+}
+
+/* --- Floating 3D Spatial Cards --- */
+.card-3d-float {
+  animation: float3D 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+.card-3d-float-alt {
+  animation: float3DAlt 7.5s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+@keyframes float3D {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(1.5deg) rotateY(-1.5deg);
+  }
+}
+
+@keyframes float3DAlt {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(7px) rotateX(-1.5deg) rotateY(1.5deg);
+  }
+}
+
+/* --- Spatial Risk Score Instrument (3D Gauge) --- */
+.spatial-gauge-container {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  margin: 0 auto;
+  transform-style: preserve-3d;
+}
+
+/* --- Atmospheric Noise & Grain Physical Texture --- */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* --- Hero & Dashboard Signal Flow Interactive Canvas Stage --- */
+.hero-signal-flow-wrap {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 80px);
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.signal-flow-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.signal-network-horizon-glow {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 260px;
+  background: radial-gradient(ellipse at center, rgba(255, 94, 0, 0.18) 0%, rgba(110, 58, 255, 0.1) 45%, transparent 75%);
+  filter: blur(50px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.spatial-orbital-ring {
+  position: absolute;
+  inset: -15px;
+  border: 1px dashed rgba(255, 94, 0, 0.25);
+  border-radius: 50%;
+  animation: rotateOrbital 24s linear infinite;
+  pointer-events: none;
+}
+
+.spatial-orbital-ring-2 {
+  position: absolute;
+  inset: -30px;
+  border: 1px dotted rgba(255, 46, 77, 0.2);
+  border-radius: 50%;
+  animation: rotateOrbitalReverse 36s linear infinite;
+  pointer-events: none;
+}
+
+.spatial-orbit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  box-shadow: 0 0 12px var(--accent-orange);
+  top: 50%;
+  left: -4px;
+  transform: translateY(-50%);
+}
+
+.spatial-orbit-node-2 {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--risk-critical);
+  box-shadow: 0 0 10px var(--risk-critical);
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes rotateOrbital {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateOrbitalReverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+/* --- 3D Fraud Network Graph Container & Tooltip --- */
+.fraud-network-3d-wrap {
+  position: relative;
+  width: 100%;
+  height: 480px;
+  background: radial-gradient(circle at center, rgba(19, 25, 38, 0.9) 0%, rgba(7, 9, 14, 0.98) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-xl);
+}
+
+.fraud-network-canvas {
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: none;
+}
+
+.fraud-network-canvas:active {
+  cursor: grabbing;
+}
+
+.fraud-intel-panel-3d {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  max-width: 320px;
+  background: rgba(13, 17, 26, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(255, 94, 0, 0.2);
+  transform: translateZ(60px);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.fraud-intel-panel-3d.active {
+  opacity: 1;
+  transform: translateZ(60px) translateY(0);
+}
+
+/* --- 3D Spatial Signal Card Depth & Prioritization --- */
+.signals-grid-3d {
+  perspective: 1200px;
+}
+
+.signal-card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  will-change: transform;
+}
+
+.signals-grid-3d:hover .signal-card-3d {
+  transform: scale(0.98) translateZ(-15px);
+  opacity: 0.85;
+}
+
+.signals-grid-3d .signal-card-3d:hover {
+  transform: scale(1.03) translateZ(40px) translateY(-6px);
+  opacity: 1;
+  border-color: var(--accent-orange);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.8), 0 0 30px rgba(255, 94, 0, 0.2);
+  z-index: 10;
+}
+
+/* --- 3D Spatial Pipeline / Flow Stages --- */
+.workflow-grid-3d {
+  perspective: 1200px;
+  transform-style: preserve-3d;
+}
+
+.workflow-card-3d {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.workflow-card-3d:hover {
+  transform: translateY(-8px) translateZ(30px) rotateX(3deg);
+  border-color: var(--accent-orange);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 94, 0, 0.15);
+}
+
+.workflow-step-num-3d {
+  position: absolute;
+  top: -14px;
+  right: var(--space-4);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent-orange);
+  color: var(--accent-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  transform: translateZ(25px);
+  box-shadow: 0 4px 12px rgba(255, 94, 0, 0.3);
+}
+
+/* --- 3D Exploded Security Shield Architecture --- */
+.security-shield-3d-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  perspective: 1200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.shield-layer-stack {
+  position: relative;
+  width: 280px;
+  height: 340px;
+  transform-style: preserve-3d;
+  transform: rotateX(20deg) rotateY(-25deg) rotateZ(5deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.security-shield-3d-wrap:hover .shield-layer-stack {
+  transform: rotateX(15deg) rotateY(-15deg) rotateZ(2deg);
+}
+
+.shield-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px 20px 140px 140px;
+  border: 1px solid var(--border-medium);
+  background: rgba(19, 25, 38, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, background 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.shield-layer-1 { transform: translateZ(0px); border-color: rgba(255, 255, 255, 0.1); }
+.shield-layer-2 { transform: translateZ(40px); border-color: rgba(110, 58, 255, 0.35); }
+.shield-layer-3 { transform: translateZ(80px); border-color: rgba(0, 230, 153, 0.35); }
+.shield-layer-4 { transform: translateZ(120px); border-color: rgba(255, 184, 0, 0.4); }
+.shield-layer-5 { transform: translateZ(160px); border-color: var(--accent-orange); background: rgba(255, 94, 0, 0.1); box-shadow: 0 0 40px rgba(255, 94, 0, 0.25); }
+
+.security-shield-3d-wrap:hover .shield-layer-1 { transform: translateZ(0px); }
+.security-shield-3d-wrap:hover .shield-layer-2 { transform: translateZ(60px); }
+.security-shield-3d-wrap:hover .shield-layer-3 { transform: translateZ(120px); }
+.security-shield-3d-wrap:hover .shield-layer-4 { transform: translateZ(180px); }
+.security-shield-3d-wrap:hover .shield-layer-5 { transform: translateZ(240px); }
+
+.shield-layer-title {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+}
+
+.shield-layer-desc {
+  font-size: 0.6875rem;
+  color: var(--text-muted);
+}
+
+/* --- 3D Spatial Scenario Showcase Canvas --- */
+.scenario-3d-stage {
+  position: relative;
+  width: 100%;
+  height: 360px;
+  background: radial-gradient(circle at center, rgba(19, 25, 38, 0.95) 0%, rgba(7, 9, 14, 0.98) 100%);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.scenario-3d-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- 3D Timeline with Perspective --- */
+.timeline-3d-track {
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.timeline-3d-node {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.timeline-3d-node:hover {
+  transform: translateZ(25px) translateX(6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 94, 0, 0.15);
+}
+
+/* --- Scroll-Based 3D Story Canvas --- */
+.story-3d-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  background: radial-gradient(circle at center, rgba(24, 32, 48, 0.7) 0%, rgba(7, 9, 14, 0.9) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  margin-top: var(--space-8);
+}
+
+.story-3d-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --- Responsive & Reduced Motion Constraints --- */
+@media (max-width: 992px) {
+  .hero-3d-core-container {
+    height: 420px;
+  }
+  .fraud-network-3d-wrap {
+    height: 400px;
+  }
+  .security-shield-3d-wrap {
+    height: 340px;
+  }
+  .shield-layer-stack {
+    width: 240px;
+    height: 290px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-3d-core-container {
+    height: 360px;
+  }
+  .fraud-network-3d-wrap {
+    height: 320px;
+  }
+  .security-shield-3d-wrap {
+    height: 280px;
+  }
+  .shield-layer-stack {
+    transform: none !important;
+  }
+  .shield-layer {
+    position: relative;
+    inset: auto;
+    margin-bottom: var(--space-2);
+    border-radius: var(--radius-md);
+    transform: none !important;
+  }
+  .card-3d-tilt {
+    transform: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .card-3d-float,
+  .card-3d-float-alt,
+  .spatial-orbital-ring,
+  .spatial-orbital-ring-2 {
+    animation: none !important;
+  }
+  .card-3d-tilt {
+    transform: none !important;
+  }
+}

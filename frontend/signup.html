@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Provision Analyst Account — RiskShield AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="grid-background flex items-center justify-center" style="min-height: 100vh; padding: var(--space-6);">
+
+  <div class="card-glass" style="width: 100%; max-width: 480px; padding: var(--space-8);">
+    <div style="text-align: center; margin-bottom: var(--space-6);">
+      <a href="index.html" class="brand-logo justify-center" style="margin-bottom: var(--space-3);">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <span class="brand-text">RiskShield <span>AI</span></span>
+      </a>
+      <h1 class="text-title-2">Provision Analyst Account</h1>
+      <p class="text-small" style="margin-top: 4px;">Role-based security onboarding.</p>
+    </div>
+
+    <form id="signupForm" class="flex flex-col gap-4" onsubmit="event.preventDefault(); window.location.href='login.html';">
+      <div>
+        <label class="text-small" style="display: block; margin-bottom: 6px; font-weight: 600;">Full Name</label>
+        <input type="text" placeholder="John Doe" required style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: #fff;">
+      </div>
+
+      <div>
+        <label class="text-small" style="display: block; margin-bottom: 6px; font-weight: 600;">Enterprise Email</label>
+        <input type="email" placeholder="analyst@fintech.com" required style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: #fff;">
+      </div>
+
+      <div>
+        <label class="text-small" style="display: block; margin-bottom: 6px; font-weight: 600;">Assigned Role</label>
+        <select style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: #fff;">
+          <option value="ROLE_ANALYST">Risk Analyst (L1/L2)</option>
+          <option value="ROLE_MANAGER">Risk Manager / Rule Admin</option>
+          <option value="ROLE_AUDITOR">Compliance Auditor (Read-Only)</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-small" style="display: block; margin-bottom: 6px; font-weight: 600;">Set Password</label>
+        <input type="password" placeholder="••••••••••••" required style="width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); padding: 0.75rem 1rem; color: #fff;">
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-2);">
+        Create Account &amp; Request Role Approval
+      </button>
+
+      <div style="text-align: center; margin-top: var(--space-2);">
+        <span class="text-small">Already registered? <a href="login.html" style="color: var(--accent-orange); font-weight: 600;">Sign In</a></span>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
